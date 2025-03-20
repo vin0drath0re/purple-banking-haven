@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export function Footer() {
@@ -7,12 +8,12 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <a href="#" className="inline-flex items-center gap-2 mb-4">
+            <Link to="/" className="inline-flex items-center gap-2 mb-4">
               <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">
                 P
               </div>
               <span className="text-xl font-bold text-primary">PurpleBank</span>
-            </a>
+            </Link>
             <p className="text-muted-foreground mb-4 max-w-xs">
               Transforming the way you bank with innovative financial solutions tailored for your needs.
             </p>
@@ -35,18 +36,18 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Products</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-primary">Checking</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary">Savings</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary">Credit Cards</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary">Loans</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary">Investments</a></li>
+              <li><Link to="/personal" className="text-muted-foreground hover:text-primary">Checking</Link></li>
+              <li><Link to="/personal" className="text-muted-foreground hover:text-primary">Savings</Link></li>
+              <li><Link to="/personal" className="text-muted-foreground hover:text-primary">Credit Cards</Link></li>
+              <li><Link to="/loans" className="text-muted-foreground hover:text-primary">Loans</Link></li>
+              <li><Link to="/investments" className="text-muted-foreground hover:text-primary">Investments</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-primary">About</a></li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-primary">About</Link></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary">Careers</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary">Press</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary">Blog</a></li>

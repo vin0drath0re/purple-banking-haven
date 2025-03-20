@@ -1,11 +1,13 @@
 
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,25 +31,45 @@ export function Navbar() {
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-primary flex items-center gap-2">
+        <Link to="/" className="text-2xl font-bold text-primary flex items-center gap-2">
           <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">P</div>
           PurpleBank
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#personal" className="text-gray-700 hover:text-primary hover-underline-animation font-medium">
+          <Link 
+            to="/personal" 
+            className={`hover:text-primary hover-underline-animation font-medium ${
+              location.pathname === '/personal' ? 'text-primary' : 'text-gray-700'
+            }`}
+          >
             Personal
-          </a>
-          <a href="#investments" className="text-gray-700 hover:text-primary hover-underline-animation font-medium">
+          </Link>
+          <Link 
+            to="/investments" 
+            className={`hover:text-primary hover-underline-animation font-medium ${
+              location.pathname === '/investments' ? 'text-primary' : 'text-gray-700'
+            }`}
+          >
             Investments
-          </a>
-          <a href="#loans" className="text-gray-700 hover:text-primary hover-underline-animation font-medium">
+          </Link>
+          <Link 
+            to="/loans" 
+            className={`hover:text-primary hover-underline-animation font-medium ${
+              location.pathname === '/loans' ? 'text-primary' : 'text-gray-700'
+            }`}
+          >
             Loans
-          </a>
-          <a href="#about" className="text-gray-700 hover:text-primary hover-underline-animation font-medium">
+          </Link>
+          <Link 
+            to="/about" 
+            className={`hover:text-primary hover-underline-animation font-medium ${
+              location.pathname === '/about' ? 'text-primary' : 'text-gray-700'
+            }`}
+          >
             About
-          </a>
+          </Link>
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
@@ -71,34 +93,42 @@ export function Navbar() {
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 flex flex-col space-y-4">
-          <a 
-            href="#personal" 
-            className="text-gray-700 hover:text-primary py-2 font-medium"
+          <Link 
+            to="/personal" 
+            className={`hover:text-primary py-2 font-medium ${
+              location.pathname === '/personal' ? 'text-primary' : 'text-gray-700'
+            }`}
             onClick={() => setMobileMenuOpen(false)}
           >
             Personal
-          </a>
-          <a 
-            href="#investments" 
-            className="text-gray-700 hover:text-primary py-2 font-medium"
+          </Link>
+          <Link 
+            to="/investments" 
+            className={`hover:text-primary py-2 font-medium ${
+              location.pathname === '/investments' ? 'text-primary' : 'text-gray-700'
+            }`}
             onClick={() => setMobileMenuOpen(false)}
           >
             Investments
-          </a>
-          <a 
-            href="#loans" 
-            className="text-gray-700 hover:text-primary py-2 font-medium"
+          </Link>
+          <Link 
+            to="/loans" 
+            className={`hover:text-primary py-2 font-medium ${
+              location.pathname === '/loans' ? 'text-primary' : 'text-gray-700'
+            }`}
             onClick={() => setMobileMenuOpen(false)}
           >
             Loans
-          </a>
-          <a 
-            href="#about" 
-            className="text-gray-700 hover:text-primary py-2 font-medium"
+          </Link>
+          <Link 
+            to="/about" 
+            className={`hover:text-primary py-2 font-medium ${
+              location.pathname === '/about' ? 'text-primary' : 'text-gray-700'
+            }`}
             onClick={() => setMobileMenuOpen(false)}
           >
             About
-          </a>
+          </Link>
           <div className="flex flex-col space-y-3 pt-2">
             <Button variant="outline" className="w-full rounded-lg">Log In</Button>
             <Button className="w-full rounded-lg">Get Started</Button>
