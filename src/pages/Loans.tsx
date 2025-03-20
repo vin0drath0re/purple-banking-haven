@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight, Calculator, Clock, Percent, Shield } from "lucide-react";
 import { FeatureCard } from "@/components/ui/FeatureCard";
+import { Link } from "react-router-dom";
 
 const Loans = () => {
   const { ref, isInView } = useScrollAnimation();
@@ -51,7 +52,7 @@ const Loans = () => {
                   From home purchases to education expenses, we offer competitive rates and flexible terms to help you achieve your dreams.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="rounded-lg group">
+                  <Button size="lg" className="rounded-lg group" as={Link} to="/loans/apply">
                     Apply Now
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
@@ -91,7 +92,7 @@ const Loans = () => {
                       <span className="text-xl font-bold">$466.08</span>
                     </div>
                   </div>
-                  <Button className="w-full rounded-lg">Get Your Rate</Button>
+                  <Button className="w-full rounded-lg" as={Link} to="/loans/apply">Get Your Rate</Button>
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-64 h-64 bg-purple-200 rounded-full blur-3xl opacity-60 -z-10"></div>
               </div>
@@ -176,7 +177,7 @@ const Loans = () => {
                     <span className="text-sm">Low down payment options</span>
                   </div>
                 </div>
-                <Button className="w-full rounded-lg">Apply Now</Button>
+                <Button className="w-full rounded-lg" as={Link} to="/loans/apply">Apply Now</Button>
               </div>
               
               <div className="glass-card p-6 rounded-2xl transition-all duration-300 hover:shadow-purple-glow hover:-translate-y-1">
@@ -205,7 +206,7 @@ const Loans = () => {
                     <span className="text-sm">Pre-approval available</span>
                   </div>
                 </div>
-                <Button variant="outline" className="w-full rounded-lg">Learn More</Button>
+                <Button variant="outline" className="w-full rounded-lg" as={Link} to="/loans/apply">Learn More</Button>
               </div>
               
               <div className="glass-card p-6 rounded-2xl transition-all duration-300 hover:shadow-purple-glow hover:-translate-y-1">
@@ -234,7 +235,7 @@ const Loans = () => {
                     <span className="text-sm">Funds as soon as same day</span>
                   </div>
                 </div>
-                <Button variant="outline" className="w-full rounded-lg">Learn More</Button>
+                <Button variant="outline" className="w-full rounded-lg" as={Link} to="/loans/apply">Learn More</Button>
               </div>
               
               <div className="glass-card p-6 rounded-2xl transition-all duration-300 hover:shadow-purple-glow hover:-translate-y-1">
@@ -263,7 +264,7 @@ const Loans = () => {
                     <span className="text-sm">Refinancing available</span>
                   </div>
                 </div>
-                <Button variant="outline" className="w-full rounded-lg">Learn More</Button>
+                <Button variant="outline" className="w-full rounded-lg" as={Link} to="/loans/apply">Learn More</Button>
               </div>
             </div>
           </div>
